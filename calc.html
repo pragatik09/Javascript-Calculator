@@ -1,0 +1,114 @@
+<html>
+	<head>
+		<style>
+			body{
+				background-color: #92dff3;
+			}
+			#main{
+				margin: auto;
+				margin-top: 100px;
+				width: 500px;
+				height: 500px;
+				background-color: black;
+				border-radius: 10px;
+			}
+			input{
+				width:22%;
+				height: 80px;
+				font-size: 20px;
+				margin: 6px;
+			}
+			#form{
+				background-color: #ff9d5c;
+				border-radius:5px;
+				width:97.5%;
+				height: 100px;
+				text-align: right;
+				font-size: 40px;
+				margin-top:15px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="main">
+			<form name="f">
+				<input type="text" name="btns" placeholder="0" id="form">
+				<br>
+				<input type="button" value="1" onClick="f.btns.value+=1">
+				<input type="button" value="2" onClick="f.btns.value+=2">
+				<input type="button" value="3" onClick="f.btns.value+=3">
+				<input type="button" value="+" onClick="add()">
+				<br>
+				<input type="button" value="4" onClick="f.btns.value+=4">
+				<input type="button" value="5" onClick="f.btns.value+=5">
+				<input type="button" value="6" onClick="f.btns.value+=6">
+				<input type="button" value="-" onClick="sub()">
+				<br>
+				<input type="button" value="7" onClick="f.btns.value+=7">
+				<input type="button" value="8" onClick="f.btns.value+=8">
+				<input type="button" value="9" onClick="f.btns.value+=9">
+				<input type="button" value="/" onClick="div()">
+				<br>
+				<input type="button" value="AC" onClick="f.btns.value=''">
+				<input type="button" value="0" onClick="f.btns.value+=0">
+				<input type="button" value="=" onClick="f.btns.value=eval(f.btns.value)">
+				<input type="button" value="x" onClick="mul()">
+				<br>
+			</form>
+		</div>
+		
+		<script>
+			function add(){
+				var a=0,b=0;
+				a=f.btns.value;
+				b=a.charAt(a.length-1);
+				if(b=='+' || b=='-' || b=='/' || b=='*'){
+					f.btns.value=a.substring(0,a.length-1);
+					f.btns.value+='+';
+				}
+				else{
+					f.btns.value+='+';
+				}
+			}
+			
+			function sub(){
+				var a=0,b=0;
+				a=f.btns.value;
+				b=a.charAt(a.length-1);
+				if(b=='+' || b=='-' || b=='/' || b=='*'){
+					f.btns.value=a.substring(0,a.length-1);
+					f.btns.value+='-';
+				}
+				else{
+					f.btns.value+='-';
+				}
+			}
+			
+			function div(){
+				var a=0,b=0;
+				a=f.btns.value;
+				b=a.charAt(a.length-1);
+				if(b=='+' || b=='-' || b=='/' || b=='*'){
+					f.btns.value=a.substring(0,a.length-1);
+					f.btns.value+='/';
+				}
+				else{
+					f.btns.value+='/';
+				}
+			}
+			
+			function mul(){
+				var a=0,b=0;
+				a=f.btns.value;
+				b=a.charAt(a.length-1);
+				if(b=='+' || b=='-' || b=='/' || b=='*'){
+					f.btns.value=a.substring(0,a.length-1);
+					f.btns.value+='*';
+				}
+				else{
+					f.btns.value+='*';
+				}
+			}
+		</script>
+	</body>
+</html>
